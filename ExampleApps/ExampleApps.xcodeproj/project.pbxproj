@@ -24,6 +24,11 @@
 		55B781FF24A61D480036F8E5 /* HandshakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B781FB24A61D480036F8E5 /* HandshakeViewController.swift */; };
 		55B7820024A61D480036F8E5 /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B781FC24A61D480036F8E5 /* ActionsViewController.swift */; };
 		55B7820324A61D600036F8E5 /* WalletConnectSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 55B7820224A61D600036F8E5 /* WalletConnectSwift */; };
+		D13E87D3269849CC00F314CC /* CCRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13E87D2269849CC00F314CC /* CCRequest.swift */; };
+		D14AAFF32696F438002354A1 /* CryptoConnectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14AAFF22696F438002354A1 /* CryptoConnectService.swift */; };
+		D1A3DBAF269C265500F71475 /* UIAlertController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3DBAE269C265500F71475 /* UIAlertController+.swift */; };
+		D1A3DBB2269C269700F71475 /* Response+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3DBB1269C269700F71475 /* Response+.swift */; };
+		D1A3DBB4269C27FC00F71475 /* EthereumTransaction+.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A3DBB3269C27FC00F71475 /* EthereumTransaction+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +50,11 @@
 		55B781FA24A61D480036F8E5 /* WalletConnect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletConnect.swift; sourceTree = "<group>"; };
 		55B781FB24A61D480036F8E5 /* HandshakeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandshakeViewController.swift; sourceTree = "<group>"; };
 		55B781FC24A61D480036F8E5 /* ActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionsViewController.swift; sourceTree = "<group>"; };
+		D13E87D2269849CC00F314CC /* CCRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCRequest.swift; sourceTree = "<group>"; };
+		D14AAFF22696F438002354A1 /* CryptoConnectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoConnectService.swift; sourceTree = "<group>"; };
+		D1A3DBAE269C265500F71475 /* UIAlertController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+.swift"; sourceTree = "<group>"; };
+		D1A3DBB1269C269700F71475 /* Response+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+.swift"; sourceTree = "<group>"; };
+		D1A3DBB3269C27FC00F71475 /* EthereumTransaction+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EthereumTransaction+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +100,7 @@
 		55B781C424A619A80036F8E5 /* ServerApp */ = {
 			isa = PBXGroup;
 			children = (
+				D13E87D1269849B100F314CC /* CryptoConnect */,
 				55B781D724A61A3C0036F8E5 /* MainViewController.swift */,
 				55B781D824A61A3C0036F8E5 /* ScannerViewController.swift */,
 				55B781C524A619A80036F8E5 /* AppDelegate.swift */,
@@ -122,6 +133,26 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D13E87D1269849B100F314CC /* CryptoConnect */ = {
+			isa = PBXGroup;
+			children = (
+				D1A3DBB0269C268800F71475 /* Extension */,
+				D14AAFF22696F438002354A1 /* CryptoConnectService.swift */,
+				D13E87D2269849CC00F314CC /* CCRequest.swift */,
+			);
+			path = CryptoConnect;
+			sourceTree = "<group>";
+		};
+		D1A3DBB0269C268800F71475 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D1A3DBB3269C27FC00F71475 /* EthereumTransaction+.swift */,
+				D1A3DBAE269C265500F71475 /* UIAlertController+.swift */,
+				D1A3DBB1269C269700F71475 /* Response+.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,7 +269,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				55B781C624A619A80036F8E5 /* AppDelegate.swift in Sources */,
+				D13E87D3269849CC00F314CC /* CCRequest.swift in Sources */,
+				D1A3DBAF269C265500F71475 /* UIAlertController+.swift in Sources */,
+				D14AAFF32696F438002354A1 /* CryptoConnectService.swift in Sources */,
 				55B781DA24A61A3C0036F8E5 /* ScannerViewController.swift in Sources */,
+				D1A3DBB4269C27FC00F71475 /* EthereumTransaction+.swift in Sources */,
+				D1A3DBB2269C269700F71475 /* Response+.swift in Sources */,
 				55B781D924A61A3C0036F8E5 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,7 +449,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZKG876RKJ8;
+				DEVELOPMENT_TEAM = Q9JLKVXGWW;
 				INFOPLIST_FILE = ServerApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -434,7 +470,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZKG876RKJ8;
+				DEVELOPMENT_TEAM = Q9JLKVXGWW;
 				INFOPLIST_FILE = ServerApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -454,7 +490,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZKG876RKJ8;
+				DEVELOPMENT_TEAM = Q9JLKVXGWW;
 				INFOPLIST_FILE = ClientApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -473,7 +509,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZKG876RKJ8;
+				DEVELOPMENT_TEAM = Q9JLKVXGWW;
 				INFOPLIST_FILE = ClientApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
