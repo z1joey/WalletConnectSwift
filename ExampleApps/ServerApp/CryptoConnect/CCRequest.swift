@@ -119,17 +119,38 @@ class SendTransaction: CCRequestHandler {
 
         do {
             let transaction = try request.parameter(of: EthereumTransaction.self, at: 0)
-
             guard transaction.from?.hex(eip55: true) == self.service.walletAddressHexString else {
                 self.service.cancel(request)
                 return
             }
 
-            approve(request) {
-                return "signed data"
+            let signedTx = self.service.sign(transaction)
+            let web3 = Web3(rpcURL: "https://rpc-mainnet.matic.network")
+
+            web3.eth.sendRawTransaction(transaction: signedTx) { [weak self] response in
+                if let error = response.error {
+                    print(error)
+                    return
+                }
+
+                self?.askToSign(request, message: transaction.description) {
+                    return (response.result?.hex())!
+                }
             }
         } catch {
             self.service.invalid(request)
         }
+    }
+}
+
+// MARK: - eth_sendTransaction
+class GetTransactionNumber: CCRequestHandler {
+    override func canHandle(request: Request) -> Bool {
+        return request.method == "eth_getTransactionCount"
+    }
+
+    override func handle(request: Request) {
+        super.handle(request: request)
+        print(request.jsonString)
     }
 }

@@ -11,12 +11,12 @@ import Web3
 extension EthereumTransaction {
     var description: String {
         return """
-        to: \(String(describing: to!.hex(eip55: true))),
-        value: \(String(describing: value!.hex())),
-        gasPrice: \(String(describing: gasPrice!.hex())),
-        gas: \(String(describing: gas!.hex())),
+        to: \(String(describing: to?.hex(eip55: true))),
+        value: \(String(describing: value?.hex())),
+        gasPrice: \(String(describing: gasPrice?.hex())),
+        gas: \(String(describing: gas?.hex())),
         data: \(data.hex()),
-        nonce: \(String(describing: nonce!.hex()))
+        nonce: \(String(describing: nonce?.hex()))
         """
     }
 }

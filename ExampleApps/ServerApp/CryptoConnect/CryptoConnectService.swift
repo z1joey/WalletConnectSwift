@@ -42,7 +42,7 @@ public final class CryptoConnectService {
     }
 
     init() {
-        server = Server(delegate: self)
+        server = Server(delegate: self)      
         privateKey = try! EthereumPrivateKey(
             privateKey: .init(hex: "BD9F406A928238E9500E4C7276F77E6D15118D62CC6B65B5A39C442BE6F1262F"))
     }
@@ -52,7 +52,7 @@ public final class CryptoConnectService {
     }
 
     func sign(_ transaction: EthereumTransaction) -> EthereumSignedTransaction {
-        return try! transaction.sign(with: privateKey, chainId: 4)
+        return try! transaction.sign(with: privateKey, chainId: 1)
     }
 
     func register(_ handler: CCRequestHandler, for viewController: UIViewController) {

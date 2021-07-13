@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
         service.register(PersonalSign(), for: self)
         service.register(SignTransaction(), for: self)
         service.register(SendTransaction(), for: self)
+        service.register(GetTransactionNumber(), for: self)
 
         walletAddressLabel.text = service.walletAddressHexString
         statusLabel.text = "Disconnected"
